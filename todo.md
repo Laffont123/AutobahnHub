@@ -1,0 +1,66 @@
+- [x] Aligner strictement le nombre total d’annonces sur le stock réel de photos uniques disponibles, en supprimant toutes les annonces génériques (« Photo listing ») ou sans photo distincte, afin de garantir un catalogue 100 % unique et sans aucun doublon visuel.
+- [x] Produire un rapport d’audit versionné listant les annonces conservées, les annonces supprimées et la justification de suppression (générique, sans photo, doublon visuel).
+- [x] Ajouter un outil d’unicité fondé sur le hachage SHA-256 du contenu réel des images téléchargées.
+
+- [x] Conduire un audit complet et non destructif des 472 annonces actuelles (zéro suppression, zéro modification).
+- [x] Recenser le nombre exact de véhicules uniques vs doublons d’identité, photos principales identiques et galeries partagées.
+- [x] Analyser la divergence entre le total affiché (472) et la pagination.
+- [x] Produire et livrer le rapport d’audit détaillé avant toute action corrective.
+- [x] Audit non destructif des photos de véhicules fournies précédemment : compter les assets encore stockés, ceux référencés par les 362 annonces et ceux qui restent inutilisés.
+- [x] Préparer un mapping non destructif des 236 photos fournies vers les annonces existantes, avec exclusion des images inadéquates et signalement des annonces sans photo appropriée.
+- [x] Présenter le mapping détaillé des 218 photos de véhicules et des annonces cibles, regroupé par catégorie, sans appliquer de réattribution.
+- [x] Établir la liste exhaustive et vérifiée des 144 annonces sans photo unique appropriée, sans modifier le catalogue.
+- [x] Fournir la liste complète des 275 annonces sans photo unique et strictement vérifiée, avec le type de photo requis pour chaque annonce.
+- [x] Conduire un audit non destructif des 362 annonces pour isoler les doublons stricts et copies artificielles avérées, en préservant les véhicules légitimement similaires, et présenter la liste des IDs proposés à la suppression pour approbation.
+- [x] Conduire un audit d’identité réelle des 362 annonces pour identifier les groupes de véhicules artificiels ou redondants (partage d'images ou copies sans distinction de véhicule réel) et présenter la liste des IDs proposés sans suppression.
+- [x] Présenter un aperçu visuel non destructif du site public, du catalogue, de la pagination et d'une fiche véhicule avant toute approbation de suppression.
+- [x] Exécuter le nettoyage conservateur des doublons artificiels et vérifier l'unicité finale du catalogue.
+- [x] Appliquer le nettoyage des listings redondants identifiés par la matrice d'audit d'identité multi-signal.
+- [x] Vérifier la pagination sur plusieurs pages du catalogue après nettoyage pour confirmer l'absence de répétition.
+- [x] Documenter le rapport post-nettoyage final.
+- [x] Diagnostiquer sans écriture pourquoi les recherches Bus, Tracteur et Poids lourd renvoient zéro résultat après le dernier nettoyage.
+- [x] Vérifier les catégories et images actives des annonces restantes par rapport aux photos fournies précédemment, sans suppression ni réattribution.
+- [x] Documenter les corrections proposées avant toute nouvelle modification du catalogue.
+- [x] Vérifier les checkpoints et commits antérieurs pour identifier l'état du catalogue avant la réduction à 191 annonces.
+- [x] Vérifier non destructivement si une sauvegarde ou un export des anciennes annonces et photos est encore disponible.
+- [x] Documenter le verdict de restauration et l'action sûre suivante avant toute modification de la base.
+- [x] Figer l'état actuel et valider l'inventaire des 176 photos physiques (38 bus, 9 poids lourds, 19 tracteurs, 110 voitures/SUV canoniques).
+- [x] Construire un manifeste de réintégration contrôlé par catégorie et empreinte SHA-256 sans doublon.
+- [x] Adapter les procédures tRPC de recherche pour inclure la correspondance sur les catégories et synonymes (`bus`, `tracteur`, `poids lourd`, `truck`, `agriculture`).
+- [x] Unifier les slugs agricoles (`agricultural` et `agricultural-machinery`) pour éviter toute scission dans le catalogue.
+- [x] Intégrer les 176 véhicules authentiques avec des images uniques et des métadonnées propres.
+- [x] Valider par tests unitaires et visuels le catalogue, la pagination par 50 et les fiches détail.
+- [x] Auditer les prix et états actuels des 176 annonces authentiques.
+- [x] Permettre une saisie ou un affichage professionnel des prix et des états (Neuf / Occasion) sans inventer de fausses valeurs.
+- [x] Configurer la désactivation de la publication automatique pour permettre une validation humaine préalable.
+- [x] Documenter le flux de validation manuelle pour l'utilisateur.
+- [x] Appliquer les fourchettes de prix fournies par catégorie sur les 176 annonces authentiques.
+- [x] Assurer que l'état « Neuf » (New) soit majoritaire et l'état « Occasion » (Used) minoritaire de manière naturelle.
+- [x] Configurer la création des nouvelles annonces en brouillon (isPublished: false) par défaut pour permettre une validation manuelle.
+- [x] Valider par tests unitaires et visuels le nouveau catalogue tarifé.
+- [x] Auditer le lot Voiture/SUV 1/5 : empreintes, doublons internes et correspondances SHA-256 avec le catalogue, sans modification ni import.
+- [ ] Préparer les brouillons validés du lot Voiture/SUV 1/5 après approbation explicite de l’identité individuelle des véhicules.
+- [x] Auditer le lot Voiture/SUV 2/5 : empreintes, doublons internes et correspondances SHA-256 avec le catalogue, sans modification ni import.
+- [ ] Préparer les brouillons validés du lot Voiture/SUV 2/5 après approbation explicite de l’identité individuelle des véhicules.
+- [x] Auditer le lot Voiture/SUV 3/5 : empreintes, doublons internes, comparaison avec les lots 1/5 et 2/5 et vérification du catalogue, sans modification ni import.
+- [ ] Préparer les brouillons validés du lot Voiture/SUV 3/5 après exclusion des doublons exacts et approbation de l’identité individuelle.
+- [x] Auditer le lot Voiture/SUV 4/5 : empreintes, doublons internes, comparaison avec les lots 1/5 à 3/5 et vérification du catalogue, sans modification ni import.
+- [ ] Préparer les brouillons validés du lot Voiture/SUV 4/5 après confirmation de l’identité individuelle et de l’authenticité des photos.
+- [x] Auditer le lot Voiture/SUV 5/6 : empreintes, doublons internes, comparaison avec les lots 1/5 à 4/5 et vérification du catalogue, sans modification ni import.
+- [ ] Préparer les brouillons validés du lot Voiture/SUV 5/6 après exclusion de 68461.jpg et confirmation de l’identité individuelle et de l’authenticité des photos.
+- [x] Auditer le lot Voiture/SUV 6/6 : empreintes, doublons internes, comparaison avec les lots 1/5 à 5/6 et vérification du catalogue, sans modification ni import.
+- [ ] Préparer les brouillons validés des lots Voiture/SUV 1/5 à 6/6 après exclusion des doublons exacts et approbation explicite de l’identité individuelle et de l’authenticité des photos.
+- [x] Auditer le lot de tracteurs et engins : empreintes, doublons d’envoi, collisions avec le catalogue et classification prudente, sans modification ni import.
+- [ ] Préparer des brouillons de matériel de chantier uniquement après confirmation de la catégorie, exclusion des références répétées et validation des images admissibles.
+- [x] Auditer le lot Bus : empreintes, doublons internes, collisions avec le catalogue et classification prudente, sans modification ni import.
+- [ ] Préparer les brouillons Bus uniquement après confirmation de l’identité individuelle et approbation explicite de l’import manuel.
+- [x] Auditer le lot Poids lourd : empreintes, doublons internes, collisions avec le catalogue et classification prudente, sans modification ni import.
+- [ ] Préparer les brouillons Poids lourd uniquement après exclusion de l’un des doublons 68552.jpg / 68555.jpg et approbation explicite de l’import manuel.
+- [x] Consolider par catégorie les fichiers reçus, les doublons exacts, les collisions avec le catalogue et le nombre de candidats réellement intégrables avant tout import.
+- [x] Importer les candidats validés en brouillons privés (isPublished: false) avec catégories, prix respectifs et images S3 permanentes, sans toucher aux 176 véhicules existants.
+- [x] Vérifier sans modification si les 110 brouillons ont été publiés, si aucun brouillon ne reste et si le catalogue public est cohérent par catégorie.
+- [x] Placer les voitures/SUV en premier dans l’ordre d’affichage initial du catalogue, sans modifier les données ni les autres fonctionnalités.
+- [x] Documenter la tentative de connexion GitHub et la limitation de synchronisation automatique ; fournir l’archive ZIP complète comme solution manuelle validée.
+- [x] Documenter l’échec du git push force automatisé vers le dépôt distant (permissions GitHub insuffisantes) et fournir l’archive complète pour import manuel.
+- [x] Confirmer que le push automatique vers Laffont123/AutobahnHub reste bloqué par les permissions du token et remettre l’archive ZIP complète à l’utilisateur.
+- [x] Générer et vérifier une archive ZIP complète du projet AutobahnHub pour import manuel dans GitHub, sans inclure les dépendances, journaux, dépôt Git interne ni secrets locaux.
